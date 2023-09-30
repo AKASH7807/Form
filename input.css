@@ -1,0 +1,76 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:'Copperplate Gothic Light';
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 30px;
+    background: #333;
+}
+.inputBox{
+    position: relative;
+    width: 250px;
+}
+.inputBox input{
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    box-shadow: none;
+    font-size: 1em;
+    letter-spacing: 1em;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    border: none;
+}
+.inputBox  span{
+    position: absolute;
+    left: 0;
+    padding: 10px 0 -10px;
+    color: rgba(255,255,255,1);
+    letter-spacing: 1px;
+    pointer-events: none;
+    transition: 0.5s;
+
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color: #2196f3;
+    transform: translateY(-16px);
+    transition: 1s;
+}
+.inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+}
+.inputBox i::before
+{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,#ff1b69,#2196f3,#ff0,#9c27b0);
+    animation:  animate 2s linear infinite;
+}
+@keyframes animate
+{
+    0%{
+        background-position-x:0;
+    }
+    100%
+    {
+        background-position-x: 250px;
+    }
+}
+
